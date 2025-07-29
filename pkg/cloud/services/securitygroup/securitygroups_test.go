@@ -1524,9 +1524,7 @@ func TestAdditionalManagedControlPlaneSecurityGroup(t *testing.T) {
 				},
 				ControlPlane: &ekscontrolplanev1.AWSManagedControlPlane{
 					Spec: ekscontrolplanev1.AWSManagedControlPlaneSpec{
-						AWSManagedControlPlaneClassSpec: ekscontrolplanev1.AWSManagedControlPlaneClassSpec{
-							NetworkSpec: tc.networkSpec,
-						},
+						NetworkSpec: tc.networkSpec,
 					},
 					Status: ekscontrolplanev1.AWSManagedControlPlaneStatus{
 						Network: infrav1.NetworkStatus{

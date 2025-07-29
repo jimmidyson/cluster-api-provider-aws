@@ -52,5 +52,5 @@ func init() {
 
 // AWSManagedControlPlaneTemplateResource describes the data needed to create an AWSManagedCluster from a template.
 type AWSManagedControlPlaneTemplateResource struct {
-	Spec AWSManagedControlPlaneTemplateResourceSpec `json:"spec"`
+	Spec AWSManagedControlPlaneSpec `json:"spec"`
 }

@@ -115,7 +115,6 @@ func (r *AWSManagedControlPlane) ConvertTo(dstRaw conversion.Hub) error {
 		}
 	}
 
-	dst.Spec.MachineTemplate = restored.Spec.MachineTemplate
 	dst.Spec.Partition = restored.Spec.Partition
 	dst.Spec.RestrictPrivateSubnets = restored.Spec.RestrictPrivateSubnets
 	dst.Spec.RolePath = restored.Spec.RolePath

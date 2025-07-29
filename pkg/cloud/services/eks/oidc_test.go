@@ -144,10 +144,8 @@ func TestOIDCReconcile(t *testing.T) {
 					Namespace: "ns",
 				},
 				Spec: ekscontrolplanev1.AWSManagedControlPlaneSpec{
-					AWSManagedControlPlaneClassSpec: ekscontrolplanev1.AWSManagedControlPlaneClassSpec{
-						Version:               aws.String("1.25"),
-						AssociateOIDCProvider: true,
-					},
+					Version:               aws.String("1.25"),
+					AssociateOIDCProvider: true,
 				},
 			}
 			secret := &corev1.Secret{

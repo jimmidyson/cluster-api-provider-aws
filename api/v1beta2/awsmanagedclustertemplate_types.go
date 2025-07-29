@@ -52,9 +52,5 @@ func init() {
 
 // AWSManagedClusterTemplateResource describes the data needed to create an AWSManagedCluster from a template.
 type AWSManagedClusterTemplateResource struct {
-	Spec AWSManagedClusterTemplateResourceSpec `json:"spec"`
+	Spec AWSManagedClusterSpec `json:"spec"`
 }
-
-// AWSManagedClusterTemplateResourceSpec defines the desired state of an AWSManagedCluster. Note that
-// this object is needed to satisfy the ClusterClass contract.
-type AWSManagedClusterTemplateResourceSpec struct{}
