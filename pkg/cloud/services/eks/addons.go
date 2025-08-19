@@ -236,10 +236,3 @@ func convertConfiguration(configuration string) *string {
 	}
 	return &configuration
 }
-
-func convertConfiguration(configuration string) *string {
-	if configuration == "" {
-		return nil
-	}
-	return &configuration
-}
