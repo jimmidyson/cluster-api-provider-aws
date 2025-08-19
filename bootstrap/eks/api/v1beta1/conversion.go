@@ -18,9 +18,10 @@ package v1beta1
 
 import (
 	apiconversion "k8s.io/apimachinery/pkg/conversion"
+	"sigs.k8s.io/controller-runtime/pkg/conversion"
+
 	"sigs.k8s.io/cluster-api-provider-aws/v2/bootstrap/eks/api/v1beta2"
 	utilconversion "sigs.k8s.io/cluster-api/util/conversion"
-	"sigs.k8s.io/controller-runtime/pkg/conversion"
 )
 
 // ConvertTo converts the v1beta1 EKSConfig receiver to a v1beta2 EKSConfig.
@@ -37,6 +38,9 @@ func (r *EKSConfig) ConvertTo(dstRaw conversion.Hub) error {
 		return err
 	}
 
+	if restored.Spec.NodeType != "" {
+		dst.Spec.NodeType = restored.Spec.NodeType
+	}
 	if restored.Spec.PreBootstrapCommands != nil {
 		dst.Spec.PreBootstrapCommands = restored.Spec.PreBootstrapCommands
 	}
@@ -104,6 +108,9 @@ func (r *EKSConfigTemplate) ConvertTo(dstRaw conversion.Hub) error {
 		return err
 	}
 
+	if restored.Spec.Template.Spec.NodeType != "" {
+		dst.Spec.Template.Spec.NodeType = restored.Spec.Template.Spec.NodeType
+	}
 	if restored.Spec.Template.Spec.PreBootstrapCommands != nil {
 		dst.Spec.Template.Spec.PreBootstrapCommands = restored.Spec.Template.Spec.PreBootstrapCommands
 	}
